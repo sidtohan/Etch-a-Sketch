@@ -8,3 +8,7 @@
   border: solid black 1px;
   background-color: aquamarine;
 }
+
+.grid-item.colored{
+  background-color: black;
+}
