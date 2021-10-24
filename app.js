@@ -3,8 +3,14 @@ const containerSize = 900 * 256;
 function initializeGrid(size) {
   // selecting the grid container
   const gridContainer = document.querySelector('.grid-container');
+  const boxSize = Math.sqrt(containerSize)/size;
+  // setting the required specifications
+  gridContainer.setAttribute('style', 
+  `display: grid; 
+  grid-template-columns: repeat(${size},${boxSize}px);
+  grid-auto-rows: ${boxSize}px;`)
 
-  // using for loop to add 256 boxes
+  // using for loop to add specified number of boxes
   for (let i = 0; i < size; i++) {
     for (let j = 0; j < size; j++) {
       // creating the required div
@@ -35,14 +41,15 @@ function newGrid(){
     } 
   } while (user >= 100);
 
+
+  // if user left the input empty, we will do nothing
+  if (isNaN(user)) {
+    return;
+  }
+
   const gridContainer = document.querySelector('.grid-container');
   // Clearing the grid container
   gridContainer.innerHTML = "";
-
-  // using inline styles to overide the default size
-  gridContainer.setAttribute('style', `display: grid;
-  grid-template-columns: repeat(${user},30px);
-  grid-auto-rows: 30px;`)
 
   // intializing the new grid
   initializeGrid(user);
