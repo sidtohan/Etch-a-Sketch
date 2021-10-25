@@ -1,15 +1,15 @@
 const containerSize = 900 * 256;
 
 function initializeGrid(size) {
-  // selecting the grid container
   const gridContainer = document.querySelector('.grid-container');
-  const boxSize = Math.sqrt(containerSize) / size;
-  // setting the required specifications
   gridContainer.setAttribute('style',
     `display: grid; 
-  grid-template-columns: repeat(${size},${boxSize}px);
-  grid-auto-rows: ${boxSize}px;
-  border: 3px solid black;`)
+  height: 480px;
+  width: 480px;
+  grid-template-columns: repeat(${size},1fr);
+  border: 2px solid black;
+  overflow: hidden;
+  `)
 
   // using for loop to add specified number of boxes
   for (let i = 0; i < size; i++) {
