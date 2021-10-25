@@ -1,3 +1,7 @@
+header {
+  color: #fff;
+}
+
 .grid-item{
   background-color: #fff;
 }
@@ -11,8 +15,30 @@
   gap: 15px;
 }
 
-header {
+.user-interaction{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  gap: 15px;
+  border: none;
+}
+
+.size:focus{
+  outline: none;
+}
+
+.size{
+  background: none;
+  width: 8em;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
   color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  height: 2em;
 }
 
 #clear-grid{
@@ -30,6 +56,43 @@ header {
 
 .clear-grid-animate{
   transform: scale(1.05);
+}
+
+.display-size{
+  width: 100%;
+  border-radius: 15px;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid rgb(255, 255, 255);
+  text-align: center;
+  color: rgb(255,255,255);
+}
+
+.slider{
+  transition: 0.25s ease-out;
+  -webkit-appearance: none;
+  background-color: grey;
+  border-radius: 15px;
+  opacity: 0.5;
+}
+
+.slider::-webkit-slider-thumb,.slider::-moz-range-thumb{
+  -webkit-appearance: none;
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(255, 255, 255);
+}
+
+.slider:hover{
+  opacity: 1;
+}
+
+#clear-grid:hover{
+  box-shadow: 0 0 10px rgb(255,255,255);
 }
 
 body{

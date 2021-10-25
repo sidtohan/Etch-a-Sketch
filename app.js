@@ -8,7 +8,8 @@ function initializeGrid(size) {
   gridContainer.setAttribute('style',
     `display: grid; 
   grid-template-columns: repeat(${size},${boxSize}px);
-  grid-auto-rows: ${boxSize}px;`)
+  grid-auto-rows: ${boxSize}px;
+  border: 3px solid black;`)
 
   // using for loop to add specified number of boxes
   for (let i = 0; i < size; i++) {
@@ -49,27 +50,13 @@ function animateButton(e){
   e.target.classList.remove('clear-grid-animate');
 }
 
-function newGrid() {
-  let user;
-  do {
-    user = parseInt(prompt("Enter the number of squares per side: "));
-    if (user >= 100) {
-      alert("Please enter a size < 100");
-    }
-  } while (user >= 100);
-
-
-  // if user left the input empty, we will do nothing
-  if (isNaN(user)) {
-    return;
-  }
-
+function newGrid(size) {
   const gridContainer = document.querySelector('.grid-container');
   // Clearing the grid container
   gridContainer.innerHTML = "";
 
   // intializing the new grid
-  initializeGrid(user);
+  initializeGrid(size);
   addGridListeners();
   // need to add listeners again
 
@@ -83,3 +70,10 @@ addGridListeners();
 const btn = document.querySelector('#clear-grid');
 btn.addEventListener('click', clearGrid);
 btn.addEventListener('transitionend', animateButton);
+
+const displaySize = document.querySelector('.display-size');
+const slider = document.querySelector('.slider');
+slider.oninput = function() {
+  newGrid(this.value);
+  displaySize.textContent = `${this.value}`;
+}
