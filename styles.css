@@ -14,6 +14,24 @@
 header {
   color: #fff;
 }
+
+#clear-grid{
+  background-color: transparent;
+  transition: 0.025s ease-out;
+  background-color: #fff;
+  color: rgb(38, 46, 117);
+  font-weight: bold;
+  font-size: 20px;
+  width: 8em;
+  height: 5em;
+  border: solid 1px #fff;
+  text-overflow: ellipsis;
+}
+
+.clear-grid-animate{
+  transform: scale(1.05);
+}
+
 body{
   background-color: rgb(38, 46, 117);
   width: 100%;

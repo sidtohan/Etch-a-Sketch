@@ -34,13 +34,19 @@ function setGridColor(e) {
 }
 
 // clears the grid
-function clearGrid() {
+function clearGrid(e) {
   const coloredBoxes = document.querySelectorAll('.grid-item');
+  e.target.classList.add('clear-grid-animate');
   coloredBoxes.forEach(box => {
     if(box.getAttribute('style')){
       box.removeAttribute('style');
     }
   });
+}
+
+function animateButton(e){
+  if(e.propertyName != 'transform') return;
+  e.target.classList.remove('clear-grid-animate');
 }
 
 function newGrid() {
@@ -76,3 +82,4 @@ addGridListeners();
 // setting up the button
 const btn = document.querySelector('#clear-grid');
 btn.addEventListener('click', clearGrid);
+btn.addEventListener('transitionend', animateButton);
