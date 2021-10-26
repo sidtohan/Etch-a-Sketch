@@ -1,5 +1,7 @@
 header {
+  font-size: 20px;
   color: #fff;
+  font-family: "Abel", "Open Sans",Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .grid-item{
@@ -95,11 +97,28 @@ header {
   box-shadow: 0 0 10px rgb(255,255,255);
 }
 
+footer{
+  margin-top: auto;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  font-family: "Abel","Open Sans", sans-serif, 'Times New Roman', Times, serif;
+}
+
 body{
-  background-color: rgb(38, 46, 117);
+  background: linear-gradient(rgb(27, 35, 112), rgb(0, 255, 255), rgb(27, 35, 112));
   width: 100%;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
