@@ -104,6 +104,18 @@ footer{
   font-family: "Abel","Open Sans", sans-serif, 'Times New Roman', Times, serif;
 }
 
+.github-link-holder{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.github-logo:hover{
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+  border-radius: 50%;  
+}
+
 body{
   background: linear-gradient(rgb(27, 35, 112), rgb(0, 255, 255), rgb(27, 35, 112));
   width: 100%;

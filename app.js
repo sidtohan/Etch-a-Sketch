@@ -15,6 +15,7 @@ function initializeGrid(size) {
   grid-template-columns: repeat(${size},1fr);
   border: 2px solid black;
   overflow: hidden;
+  flex-shrink: 0;
   `)
 
   // creating the required size by using nested for loop
