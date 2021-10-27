@@ -42,6 +42,7 @@ header {
   text-align: center;
   height: 2em;
 }
+
 .choice-buttons{
   width: 80%;
   display: flex;
@@ -53,19 +54,19 @@ header {
 #clear-grid, #eraser, #single-color, #random-color{
   background-color: transparent;
   transition: 0.025s ease-out;
+  font-family: 'Noto Sans', sans-serif, Arial, Helvetica;
   background-color: #fff;
   color: rgb(38, 46, 117);
   font-weight: bold;
   font-size: 20px;
-  width: 8em;
-  height: 5em;
+  padding: 15px;
   border: solid 1px #fff;
   text-overflow: ellipsis;
+  border-radius: round;
 }
 
 #eraser, #single-color, #random-color{
   width: 5em;
-  height: 3em;
   flex-grow: 1;
   padding: 5px;
 }
@@ -78,9 +79,29 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0;
 }
 
+.color-picker > h2{
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  padding: 15px;
+  margin-bottom: 0;
+  width: 8em;
+  text-align: center;
+  color: rgb(38, 46, 117);
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif, Arial, Helvetica;
+}
 
+.color-choice{
+  border: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+}
 .display-size{
   width: 100%;
   border-radius: 15px;
