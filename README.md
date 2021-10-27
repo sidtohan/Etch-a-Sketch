@@ -2,7 +2,7 @@
 ## Table of Contents
 * [About the project](#about-the-project)
 * [Technologies Used](#technologies-used)
-* [Status](#setup)
+* [Status](#status)
 
 ## About the project
 This project was created to get a good grasp of event listeners, DOM manipulation and javascript to modify the HTML page.
@@ -12,9 +12,8 @@ This project was created to get a good grasp of event listeners, DOM manipulatio
 * CSS3
 * Javascript
 
-## Setup
-Setting up this project doesn't require any installation, accessible simply by hosting on nginx server or using local host
-
+## Status
+Currently this project is in development, with more UI changes coming.
 
 
 
