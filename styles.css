@@ -49,7 +49,8 @@ header {
   gap: 8px;
   justify-content: flex-end;
 }
-#clear-grid, #eraser, #single-color{
+
+#clear-grid, #eraser, #single-color, #random-color{
   background-color: transparent;
   transition: 0.025s ease-out;
   background-color: #fff;
@@ -62,10 +63,11 @@ header {
   text-overflow: ellipsis;
 }
 
-#eraser, #single-color{
+#eraser, #single-color, #random-color{
   width: 5em;
   height: 3em;
   flex-grow: 1;
+  padding: 5px;
 }
 
 .clear-grid-animate{
