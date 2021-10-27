@@ -4,6 +4,7 @@ const displaySize = document.querySelector('.display-size');
 const gridContainer = document.querySelector('.grid-container');
 const slider = document.querySelector('.slider');
 const clearBtn = document.querySelector('#clear-grid');
+const randomColor = document.querySelector('#random-color');
 const singleColor = document.querySelector('#single-color');
 const eraser = document.querySelector('#eraser');
 let currentOption = "single-color";
@@ -43,6 +44,12 @@ function addGridListeners() {
 function changeGridItem(e) {
   if (currentOption === "eraser") {
     e.target.removeAttribute('style');
+  } else if (currentOption === "random-color"){
+    let r,g,b;
+    r = Math.random()*256;
+    g = Math.random()*256;
+    b = Math.random()*256;
+    e.target.style.backgroundColor = `rgb(${r},${g},${b})`;
   } else {
     e.target.style.backgroundColor = "black";
   }
@@ -103,6 +110,8 @@ clearBtn.addEventListener('transitionend', animateButton);
 singleColor.addEventListener('click', changeChoice);
 
 eraser.addEventListener('click', changeChoice)
+
+randomColor.addEventListener('click', changeChoice);
 
 slider.addEventListener('mouseup', stopSlider);
 slider.addEventListener('input', updateDisplaySize);
