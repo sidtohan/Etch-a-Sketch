@@ -74,6 +74,13 @@ header {
   transform: scale(1.05);
 }
 
+.color-picker{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 .display-size{
   width: 100%;
   border-radius: 15px;

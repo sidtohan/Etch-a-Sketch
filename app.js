@@ -2,13 +2,14 @@
 const containerSize = 900 * 256;
 const displaySize = document.querySelector('.display-size');
 const gridContainer = document.querySelector('.grid-container');
+const colorPicker = document.querySelector('.color-choice');
 const slider = document.querySelector('.slider');
 const clearBtn = document.querySelector('#clear-grid');
 const randomColor = document.querySelector('#random-color');
 const singleColor = document.querySelector('#single-color');
 const eraser = document.querySelector('#eraser');
 let currentOption = "single-color";
-
+let currentColor = "#000000";
 
 // Functions
 function initializeGrid(size) {
@@ -46,12 +47,12 @@ function changeGridItem(e) {
     e.target.removeAttribute('style');
   } else if (currentOption === "random-color"){
     let r,g,b;
-    r = Math.random()*256;
-    g = Math.random()*256;
-    b = Math.random()*256;
+    r = Math.floor(Math.random()*256);
+    g = Math.floor(Math.random()*256);
+    b = Math.floor(Math.random()*256);
     e.target.style.backgroundColor = `rgb(${r},${g},${b})`;
   } else {
-    e.target.style.backgroundColor = "black";
+    e.target.style.backgroundColor = currentColor;
   }
 }
 
@@ -99,6 +100,11 @@ function changeChoice(e) {
   currentOption = this.value;
 }
 
+// sets the color chosen by user into a variable for reference
+function setColor(e){
+  currentColor = e.target.value;
+}
+
 // intial code and event listeners added
 initializeGrid(16);
 addGridListeners();
@@ -115,3 +121,5 @@ randomColor.addEventListener('click', changeChoice);
 
 slider.addEventListener('mouseup', stopSlider);
 slider.addEventListener('input', updateDisplaySize);
+
+colorPicker.addEventListener('input', setColor)
