@@ -67,10 +67,24 @@ function clearGrid(e) {
   });
 }
 
-// animates the clear grid button
-function animateButton(e) {
-  if (e.propertyName != 'transform') return;
-  e.target.classList.remove('clear-grid-animate');
+// animate the button on hover
+function animateButtonHover(e){
+  e.target.classList.add('animate-hover');
+}
+
+// animates the button
+function animateButtonClickStart(e) {
+  e.target.classList.add('animate-click');
+}
+
+// ends the animation
+function animateButtonClickEnd(e) {
+  if (e.propertyName !== "transform") return;
+  e.target.classList.remove('animate-click');
+}
+
+function endAnimation(e){
+  e.target.classList.remove('animate-hover');
 }
 
 // creates a new grid by a) clearing it, and b) calling the intialized
@@ -111,13 +125,28 @@ addGridListeners();
 
 // Buttons
 clearBtn.addEventListener('click', clearGrid);
-clearBtn.addEventListener('transitionend', animateButton);
+clearBtn.addEventListener('click', animateButtonClickStart);
+clearBtn.addEventListener('mouseenter', animateButtonHover);
+clearBtn.addEventListener('mouseleave', endAnimation);
+clearBtn.addEventListener('transitionend', animateButtonClickEnd);
 
 singleColor.addEventListener('click', changeChoice);
+singleColor.addEventListener('click', animateButtonClickStart);
+singleColor.addEventListener('mouseenter', animateButtonHover);
+singleColor.addEventListener('mouseleave', endAnimation)
+singleColor.addEventListener('transitionend', animateButtonClickEnd);
 
-eraser.addEventListener('click', changeChoice)
+eraser.addEventListener('click', changeChoice);
+eraser.addEventListener('click', animateButtonClickStart);
+eraser.addEventListener('mouseenter', animateButtonHover);
+eraser.addEventListener('mouseleave', endAnimation)
+eraser.addEventListener('transitionend', animateButtonClickEnd);
 
 randomColor.addEventListener('click', changeChoice);
+randomColor.addEventListener('click', animateButtonClickStart);
+randomColor.addEventListener('mouseenter', animateButtonHover);
+randomColor.addEventListener('mouseleave', endAnimation)
+randomColor.addEventListener('transitionend', animateButtonClickEnd);
 
 slider.addEventListener('mouseup', stopSlider);
 slider.addEventListener('input', updateDisplaySize);

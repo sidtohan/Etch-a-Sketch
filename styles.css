@@ -1,7 +1,11 @@
 header {
   font-size: 20px;
   color: #fff;
-  font-family: "Abel", "Open Sans",Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Poppins", "Open Sans",Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#header-logo{
+  vertical-align: middle;
 }
 
 .grid-item{
@@ -54,7 +58,7 @@ header {
 #clear-grid, #eraser, #single-color, #random-color{
   background-color: transparent;
   transition: 0.025s ease-out;
-  font-family: 'Noto Sans', sans-serif, Arial, Helvetica;
+  font-family: 'Poppins', sans-serif, Arial, Helvetica;
   background-color: #fff;
   color: rgb(38, 46, 117);
   font-weight: bold;
@@ -62,7 +66,7 @@ header {
   padding: 15px;
   border: solid 1px #fff;
   text-overflow: ellipsis;
-  border-radius: round;
+  border-radius: 15px;
 }
 
 #eraser, #single-color, #random-color{
@@ -71,8 +75,13 @@ header {
   padding: 5px;
 }
 
-.clear-grid-animate{
+.animate-hover{
   transform: scale(1.05);
+  box-shadow: 0 0 5px #ffffff;
+}
+
+.animate-click{
+  transform: scale(0.95);
 }
 
 .color-picker{
@@ -92,7 +101,7 @@ header {
   color: rgb(38, 46, 117);
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Noto Sans', sans-serif, Arial, Helvetica;
+  font-family: 'Poppins', sans-serif, Arial, Helvetica;
 }
 
 .color-choice{
@@ -102,6 +111,7 @@ header {
   padding: 0;
   flex-grow: 1;
 }
+
 .display-size{
   width: 100%;
   border-radius: 15px;
@@ -159,9 +169,9 @@ footer{
 }
 
 body{
-  background: linear-gradient(rgb(27, 35, 112), rgb(0, 255, 255), rgb(27, 35, 112));
+  background: linear-gradient(to right, #1a2980, #26d0ce);
   width: 100%;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: "Poppins",'Open Sans', 'Helvetica Neue', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
