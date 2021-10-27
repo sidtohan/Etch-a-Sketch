@@ -1,9 +1,12 @@
-// Global Constants
+// Global Variables
 const containerSize = 900 * 256;
 const displaySize = document.querySelector('.display-size');
-const slider = document.querySelector('.slider');
-const btn = document.querySelector('#clear-grid');
 const gridContainer = document.querySelector('.grid-container');
+const slider = document.querySelector('.slider');
+const clearBtn = document.querySelector('#clear-grid');
+const singleColor = document.querySelector('#single-color');
+const eraser = document.querySelector('#eraser');
+let currentOption = "single-color";
 
 
 // Functions
@@ -32,13 +35,17 @@ function initializeGrid(size) {
 function addGridListeners() {
   let gridItemList = document.querySelectorAll('.grid-item');
   gridItemList.forEach(item => {
-    item.addEventListener('mouseenter', setGridColor);
+    item.addEventListener('mouseenter', changeGridItem);
   });
 }
 
 // sets the color of grid item on hovering
-function setGridColor(e) {
-  e.target.style.backgroundColor = "black";
+function changeGridItem(e) {
+  if (currentOption === "eraser") {
+    e.target.removeAttribute('style');
+  } else {
+    e.target.style.backgroundColor = "black";
+  }
 }
 
 // clears the grid
@@ -77,16 +84,25 @@ function stopSlider(e) {
   newGrid(e.target.value);
 }
 
-function updateDisplaySize(e){
+function updateDisplaySize(e) {
   displaySize.textContent = `${e.target.value}x${e.target.value}`;
 }
 
+function changeChoice(e) {
+  currentOption = this.value;
+}
 
 // intial code and event listeners added
 initializeGrid(16);
 addGridListeners();
 
-btn.addEventListener('click', clearGrid);
-btn.addEventListener('transitionend', animateButton);
+// Buttons
+clearBtn.addEventListener('click', clearGrid);
+clearBtn.addEventListener('transitionend', animateButton);
+
+singleColor.addEventListener('click', changeChoice);
+
+eraser.addEventListener('click', changeChoice)
+
 slider.addEventListener('mouseup', stopSlider);
 slider.addEventListener('input', updateDisplaySize);

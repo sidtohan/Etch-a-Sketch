@@ -42,8 +42,14 @@ header {
   text-align: center;
   height: 2em;
 }
-
-#clear-grid{
+.choice-buttons{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+#clear-grid, #eraser, #single-color{
   background-color: transparent;
   transition: 0.025s ease-out;
   background-color: #fff;
@@ -54,6 +60,12 @@ header {
   height: 5em;
   border: solid 1px #fff;
   text-overflow: ellipsis;
+}
+
+#eraser, #single-color{
+  width: 5em;
+  height: 3em;
+  flex-grow: 1;
 }
 
 .clear-grid-animate{
