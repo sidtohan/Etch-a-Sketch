@@ -6,6 +6,7 @@
 
 ## About the project
 This project was created to get a good grasp of event listeners, DOM manipulation and javascript to modify the HTML page.
+This project is currently not optimised for mobile devices
 
 ## Technologies Used
 * HTML5
